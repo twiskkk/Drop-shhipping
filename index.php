@@ -1,3 +1,7 @@
+<?php
+session_start();
+$panier = 0 ;
+?>
 <html lang="fr">
 
 <head>
@@ -6,18 +10,21 @@
     <meta name="description" content="">
     <meta name="author" content="GetTemplate.com">
     <title>Hostips</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
     <link rel="shortcut icon" href="assets/images/gt_favicon.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:200,400,600|Open+Sans:300,400,700">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="assets/css/styles.css"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
 
+
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body class="page-home">
 
-    <nav class="navbar navbar-dual navbar-inverse navbar-fixed-top headroom ontop-now">
+    <nav class="navbar navbar-dual navbar-inverse navbar-fixed-top headroom ontop-now navbar-expand ">
         <div class="container">
             <div class="navbar-header">
 
@@ -25,19 +32,30 @@
                         class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
                 <a class="navbar-brand" href="index.php">
                     <img src="assets/images/logo.webp" alt="logo" height="56" width="72">
-                    <img src="assets/images/logo.webp" alt="Progressus HTML5 template" class="secondary" height="56" width="72">
+                    <img src="assets/images/logo.webp" alt="Progressus HTML5 template" class="secondary" height="56"
+                        width="72">
                 </a>
 
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav pull-right">
-                    <li class="active"><a href="index.php">Home</a></li>
-                    <li><a href="tendency.php">Tendency</a></li>
-                    <li><a href="new.php">New</a></li>
-                    <li><a href="shop.php">Shop</a></li>
-                    <li><a class="btn btn-rounded" href="signin.html">SIGN IN / SIGN UP</a></li>
+                <ul class="nav navbar-nav pull-right" >
+                    <li class="active"><a href="index.php" >Home</a></li>
+                    <li ><a  href="tendency.php">Tendency</a></li>
+                    <li ><a  href="new.php">New</a></li>
+                    <li ><a  href="shop.php">Shop</a></li>
+                    <li  >
+                        <button class="btn btn-outline-black bg-light" type="submit">
+                            <i class="bi-cart-fill me-1"></i>
+                            Cart
+                            <span class="badge bg-dark text-white ms-1 rounded-pill"><?php echo $panier; ?></span>
+                        </button>
+                    </li>
+
+                    <li ><a class="btn btn-rounded" href="signin.html">SIGN IN / SIGN UP</a></li>
                 </ul>
+
             </div>
+
         </div>
     </nav>
 
@@ -45,14 +63,10 @@
     <header class="head head-default">
         <div class="container">
             <h1 class="lead text-center">Hostips</h1>
-            <p class="tagline text-center">welcome to Hostips, the site for good deals<a
-                    href="https://www.gettemplate.com/?utm_source=progressus&amp;utm_medium=template&amp;utm_campaign=progressus">GetTemplate</a>
-            </p>
+            <p class="tagline text-center">welcome to Hostips, the site for good deals</p>
             <p class="text-center">
-                <a class="btn btn-default btn-lg"
-                    href="tendency.php">Tendency</a>
-                <a class="btn btn-action btn-lg"
-                    href="shop.php">BUY
+                <a class="btn btn-default btn-lg" href="tendency.php">Tendency</a>
+                <a class="btn btn-action btn-lg" href="shop.php">BUY
                     NOW FOR $19</a>
             </p>
         </div>
@@ -61,53 +75,229 @@
 
     <section class="section section-intro">
         <div class="container">
-            <h2 class="text-center">Trending items</h2>
-            <p class="text-center text-muted">
-            here are the favorite items of our customers.
-            </p>
+            <h1 class="text-center">Trending items</h1>
+            <h2 class="text-center text-muted">
+                here are the favorite items of our customers.
+            </h2>
         </div>
     </section>
-
-
-    <section class="section jumbotron">
-        <div class="container">
-            <h3 class="title text-center">
-                REASONS TO USE THIS TEMPLATE<br>
-                <small>Progressus PRO has just the right feature set to help you get beautiful, maintainable website
-                    fast.</small>
-            </h3>
-            <div class="row topspace-2x">
-                <figure class="col-md-3 col-sm-6 bottomspace-xs text-center">
-                    <i class="fa fa-cogs fa-4x color-accent"></i>
-                    <h4>Bootstrap-powered</h4>
-                    <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque aliquid
-                        adipisci aspernatur. Soluta quisquam dignissimos earum quasi voluptate. Amet, dignissimos,
-                        tenetur vitae dolor quam iusto assumenda hic reprehenderit?</p>
-                </figure>
-                <figure class="col-md-3 col-sm-6 bottomspace-xs text-center">
-                    <i class="fa fa-paper-plane-o fa-4x color-accent"></i>
-                    <h4>Fat-free</h4>
-                    <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores,
-                        commodi, sequi quis ad fugit omnis cumque a libero error nesciunt molestiae repellat quos
-                        perferendis numquam quibusdam rerum repellendus laboriosam reprehenderit! </p>
-                </figure>
-                <figure class="col-md-3 col-sm-6 bottomspace-xs text-center">
-                    <i class="fa fa-cc fa-4x color-accent"></i>
-                    <h4>Creative Commons</h4>
-                    <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, vitae,
-                        perferendis, perspiciatis nobis voluptate quod illum soluta minima ipsam ratione quia numquam
-                        eveniet eum reprehenderit dolorem dicta nesciunt corporis?</p>
-                </figure>
-                <figure class="col-md-3 col-sm-6 bottomspace-xs text-center">
-                    <i class="fa fa-life-ring fa-4x color-accent"></i>
-                    <h4>Author's support</h4>
-                    <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, excepturi,
-                        maiores, dolorem quasi reprehenderit illo accusamus nulla minima repudiandae quas ducimus
-                        reiciendis odio sequi atque temporibus facere corporis eos expedita? </p>
-                </figure>
+    
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Fancy Product</h5>
+                                <!-- Product price-->
+                                $40.00 - $80.00
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Sale badge-->
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale
+                        </div>
+                        <!-- Product image-->
+                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Special Item</h5>
+                                <!-- Product reviews-->
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                                <!-- Product price-->
+                                <span class="text-muted text-decoration-line-through">$20.00</span>
+                                $18.00
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Sale badge-->
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale
+                        </div>
+                        <!-- Product image-->
+                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Sale Item</h5>
+                                <!-- Product price-->
+                                <span class="text-muted text-decoration-line-through">$50.00</span>
+                                $25.00
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Popular Item</h5>
+                                <!-- Product reviews-->
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                                <!-- Product price-->
+                                $40.00
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Sale badge-->
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale
+                        </div>
+                        <!-- Product image-->
+                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Sale Item</h5>
+                                <!-- Product price-->
+                                <span class="text-muted text-decoration-line-through">$50.00</span>
+                                $25.00
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Fancy Product</h5>
+                                <!-- Product price-->
+                                $120.00 - $280.00
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Sale badge-->
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale
+                        </div>
+                        <!-- Product image-->
+                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Special Item</h5>
+                                <!-- Product reviews-->
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                                <!-- Product price-->
+                                <span class="text-muted text-decoration-line-through">$20.00</span>
+                                $18.00
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Popular Item</h5>
+                                <!-- Product reviews-->
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                                <!-- Product price-->
+                                $40.00
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+
 
 
     <section class="section section-faq">
@@ -116,33 +306,28 @@
             <br>
             <div class="row">
                 <div class="col-sm-6">
-                    <h4><b>Which code editor would you recommend?</b></h4>
-                    <p>I'd highly recommend you <a href="https://www.sublimetext.com/">Sublime Text</a> - a free to try
-                        text editor which I'm using daily. Awesome tool!</p>
+                    <h4><b>What is the delivery time ?</b></h4>
+                    <p>We deliver the packages within 10 to 15 working days</p>
                 </div>
                 <div class="col-sm-6">
-                    <h4><b>Nice header. Where do I find more images like that one?</b></h4>
+                    <h4><b>What is the return policy ?</b></h4>
                     <p>
-                        Well, there are thousands of stock art galleries, but personally,
-                        I prefer to use photos from these sites: <a href="https://unsplash.com">Unsplash.com</a>
-                        and <a href="https://www.flickr.com/creativecommons/by-2.0/tags/">Flickr - Creative Commons</a>
-                    </p>
+                    You have 1 month after your purchase to start a return request</br></p>
+                    <p class="bg-red">For more information <a href="Retour.php"></a>
+                                    </p>
                 </div>
             </div>
             <div class="row topspace">
                 <div class="col-sm-6">
-                    <h4><b>Can I use it to build a site for my client?</b></h4>
+                    <h4><b>What is the duration ?</b></h4>
                     <p>
-                        Yes, you can. You may use this template for any purpose, just don't forget about the <a
-                            href="https://creativecommons.org/licenses/by/3.0/">license</a>,
-                        which says: "You must give appropriate credit", i.e. you must provide the name of the creator
-                        and a link to the original template in your work.
+                    The warranty varies depending on the product but they follow the European standard of 2 years minimum.
                     </p>
                 </div>
                 <div class="col-sm-6">
-                    <h4><b>Can you customize this template for me?</b></h4>
-                    <p>Yes, I can. Please drop me a line to sergey-at-pozhilov.com and describe your needs in details.
-                        Please note, my services are not cheap.</p>
+                    <h4><b>How can I contact customer service</b></h4>
+                    <p>Customer service is available 24 hours a day at this e-mail address</p>
+                    <a href="mailto:customerservice_hostips@gmail.com" class="btn btn-primary">customerservice_hostips@gmail.com </a>
                 </div>
             </div>
         </div>
@@ -166,10 +351,7 @@
                         <div class="col-sm-9 content">
                             <blockquote>
                                 <i class="fa fa-quote-left"></i>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam deserunt
-                                    accusamus soluta maiores alias, aliquid ipsum nobis laudantium qui, eos architecto
-                                    accusantium doloremque dolorem quia asperiores voluptate pariatur. Laboriosam,
-                                    ullam.</p>
+                                <p>Ce site est incroyable</p>
                             </blockquote>
                             <p class="source">Mario Hayes
                                 <br /><span class="title">Co-Founder, Superawesome Inc</span>
@@ -185,9 +367,7 @@
                         <div class="col-sm-9 content">
                             <blockquote>
                                 <i class="fa fa-quote-left"></i>
-                                <p>Ipsa nemo, minus perspiciatis harum at, repudiandae quae aliquam quo? Ullam laborum
-                                    unde corporis eos ipsa esse necessitatibus in natus atque labore delectus, aperiam
-                                    perferendis, assumenda iusto qui cum dolor!</p>
+                                <p>Merci trop content de mon ordi!</p>
                             </blockquote>
                             <p class="source">Erin Mendoza
                                 <br /><span class="title">Entrepreneur, GT corp</span>
@@ -203,9 +383,7 @@
                         <div class="col-sm-9 content">
                             <blockquote>
                                 <i class="fa fa-quote-left"></i>
-                                <p>Voluptatibus laboriosam pariatur doloribus repudiandae blanditiis cum quibusdam
-                                    similique nisi nemo labore eos sed quasi quia, assumenda, ratione sit provident
-                                    beatae hic eius velit neque magni distinctio ab quaerat ipsa!</p>
+                                <p>COlis arriver sans probleme mon fils est tres content!</p>
                             </blockquote>
                             <p class="source">Dwight Ray
                                 <br /><span class="title">CTO, Drave</span>
@@ -218,21 +396,6 @@
 
             </div>
 
-        </div>
-    </section>
-    <section class="section section-cta">
-        <div class="container">
-            <h2>Get started
-                <span>Start your free, 30 day trial today!</span>
-            </h2>
-            <div class="row topspace">
-                <div class="col-sm-9">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat velit voluptatem quae tempora
-                        blanditiis sunt fugit facere praesentium vero, est natus, id accusantium ab animi voluptatibus
-                        magnam laborum ad nobis nam assumenda dolores quod cumque!</p>
-                </div>
-                <div class="col-sm-3"><a href="" class="btn btn-block btn-action">Start free trial</a></div>
-            </div>
         </div>
     </section>
     <footer id="footer" class="clearfix">
@@ -264,14 +427,11 @@
                     <div class="col-md-6 widget">
                         <h3 class="widget-title">Text widget</h3>
                         <div class="widget-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, dolores, quibusdam
-                                architecto voluptatem amet fugiat nesciunt placeat provident cumque accusamus itaque
-                                voluptate modi quidem dolore optio velit hic iusto vero praesentium repellat commodi ad
-                                id expedita cupiditate repellendus possimus unde?</p>
-                            <p>Eius consequatur nihil quibusdam! Laborum, rerum, quis, inventore ipsa autem repellat
-                                provident assumenda labore soluta minima alias temporibus facere distinctio quas
-                                adipisci nam sunt explicabo officia tenetur at ea quos doloribus dolorum voluptate
-                                reprehenderit architecto sint libero illo et hic.</p>
+                            <p>Ce site fut l'idee de 2 jeunes qui n'arrivaient pas à trouver sur internet les objets qu'ils
+                                pensaientt indispensable.
+                                Des objets locaux et facile d'acces pour tous. C'est pourquoi ils creairent Hostips.
+                            </p>
+
                         </div>
                     </div>
                 </div>
@@ -283,10 +443,9 @@
                     <div class="col-md-6 widget">
                         <div class="widget-body">
                             <p class="simplenav">
-                                <a href="#">Home</a> |
-                                <a href="about.html">About</a> |
-                                <a href="sidebar-right.html">Sidebar</a> |
-                                <a href="contact.html">Contact</a> |
+                                <a href="inde.php">Home</a> |
+                                <a href="about.php">About</a> |
+                                <a href="contact.php">Contact</a> |
                                 <b><a href="signup.html">Sign up</a></b>
                             </p>
                         </div>
@@ -294,8 +453,7 @@
                     <div class="col-md-6 widget">
                         <div class="widget-body">
                             <p class="text-right">
-                                Copyright &copy; 2014, Your name. Design: <a href="https://gettemplate.com/"
-                                    rel="designer">GetTemplate</a>
+                                Copyright &copy; 2022, Your name. Design: Hostips</a>
                             </p>
                         </div>
                     </div>
@@ -314,7 +472,7 @@
             m = s.getElementsByTagName(o)[0];
         a.async = 1;
         a.src = g;
-        m.parentNode.insertBefore(a, m)
+        m.parentNode.insertBefore(a, m) c
     })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
     ga('create', 'UA-48366846-1', 'gettemplate.com');

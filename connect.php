@@ -1,6 +1,7 @@
 <?php
 session_start();
 include './assets/php/formulaires.php';
+include './assets/php/fonctions.php';
 if(!empty($_SESSION)){
     header('Location: index.php');
     exit();
@@ -48,7 +49,7 @@ else{
                         </br>
                         <label class='label_pass'>Password</label></br><input class='password' type='password' name='pass' placeholder='password' id='pass'></input>
                         <p id='error_pass'></p>
-                        <input class='envoie' type='submit' name='connect' value='Login' id='form_login'  onclick="return mdp_valide_form()"/>
+                        <input class='envoie' type='submit'  value='Login' id='form_login'  onclick="return mdp_valide_form()"/>
                     </fieldset>
                 </form>
                 <?php
@@ -65,16 +66,32 @@ else{
                     <fieldset class='fieldset'>
                         <label class='label_login'>Login</label></br><input class='login' type='mail' name='login' placeholder='user' id='login' ></input>
                         </br>
-                        <label class='label_pass'>Password</label></br><input class='password' type='password' name='pass_1' placeholder='password' id='pass'></input>              
+                        <label class='label_pass'>Password</label></br>
+                        <input class='password' type='password' name='pass_1' placeholder='password' id='pass'></input>              
                         </br><input class='password' type='password' name='pass_2' placeholder='password' id='pass_2'></input>
                         <p id='error_pass'></p>
-                        <input class='envoie' type='submit' value='Register' name='connect' id='form_login' onclick="return mdp__identique()"/>
+                        <input class='envoie' type='submit' value='Register'  id='form_login' onclick="return mdp__identique()"/>
                     </fieldset>
                 </form>
                 <?php
             }
         }
+    if(!empty($_POST)){
+        if(!empty($_POST['pass_2'])){/* Register */
+        register($_POST['login'],$_POST['pass_2']);
+        header('Location:connect.php?action=login');
+        exit();
+        }
+        /* Login */
+        else{
+            Login($_POST['login'],$_POST['pass']);
+            header('Location:index.php');
+            exit();
+        }
+        
     }
+
+}
     ?>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
         <script src="assets/js/menu.js"></script>

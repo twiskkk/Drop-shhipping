@@ -1,9 +1,10 @@
 <?php
 session_start();
-if (empty($_SESSION) || $_SESSION['status']=="visiteur"){
-    $_SESSION['panier']=+1;
+if(!empty($_SESSION)){
+    if($_POST['article']='1'){
+        $_SESSION['panier1']+=1;
+    }
+    if($_POST['article']='2'){
+        $_SESSION['panier2']+=1;
+    }
 }
-else if($_SESSION['status']=="connecter"){
-    $_SESSION['panier']=+1;
-}
-?>

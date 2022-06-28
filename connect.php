@@ -45,10 +45,15 @@ else{
 
                 <form  class='card' action="connect.php" method='post'>
                     <fieldset class='fieldset'>   
-                        <label class='label_login'>Login</label></br><input class='login' type='mail' name='login' placeholder='user' id='login' ></input>
+                        <label class='label_login'>Login</label></br><input class='login' type='mail' name='login' placeholder='user' id='login' ></input><span id='error_login'></span>
                         </br>
                         <label class='label_pass'>Password</label></br><input class='password' type='password' name='pass' placeholder='password' id='pass'></input>
                         <p id='error_pass'></p>
+                        <?php
+                            if(!empty($_GET['error']))if($_GET['error']=='login'){
+                                ?> <span class='ident_erreur'>Erreur dans le mot de passe ou le login</span><?php
+                            }
+                        ?>
                         <input class='envoie' type='submit'  value='Login' id='form_login'  onclick="return mdp_valide_form()"/>
                     </fieldset>
                 </form>
@@ -64,7 +69,7 @@ else{
                 </form>
                 <form action="connect.php" method='post' class='card_2'>
                     <fieldset class='fieldset'>
-                        <label class='label_login'>Login</label></br><input class='login' type='mail' name='login' placeholder='user' id='login' ></input>
+                        <label class='label_login'>Login</label></br><input class='login' type='mail' name='login' placeholder='user' id='login' ></input><span id='error_login'></span>
                         </br>
                         <label class='label_pass'>Password</label></br>
                         <input class='password' type='password' name='pass_1' placeholder='password' id='pass'></input>              
@@ -78,17 +83,32 @@ else{
         }
     if(!empty($_POST)){
         if(!empty($_POST['pass_2'])){/* Register */
-        register($_POST['login'],$_POST['pass_2']);
+        $cree = register($_POST['login'],$_POST['pass_2']);
+        if($cree==1){
         header('Location:connect.php?action=login');
         exit();
         }
-        /* Login */
-        else{
-            Login($_POST['login'],$_POST['pass']);
-            header('Location:index.php');
-            exit();
-        }
+    }
+    /* Login */
+    else{
+            $connection = Login($_POST['login'],$_POST['pass']);
+            
+            if($connection == 1){
+                $_SESSION['login']=$_POST['login'];
+                session_panier($_POST['login'],$_POST['pass']);
+            
+                header('Location:index.php');
+                exit(); 
+            }
+            else{
+                header('Location:connect.php?action=login&error=login');
+                exit();
+          }
+     }
         
+    }
+    if(!empty($_SESSION)){
+        var_dump(($_SESSION));
     }
 
 }

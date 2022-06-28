@@ -1,17 +1,47 @@
+const input_login = document.getElementById('login');
+const error_login = document.getElementById('error_login');
+
 const input_pass = document.getElementById('pass');
 const input_pass_2 = document.getElementById('pass_2');
 const error_pass = document.getElementById('error_pass');
-console.log(pass);
+
+const ident_erreur = document.querySelector(".ident_erreur");
+
+console.log(input_login);
 
 
 
-
+input_login.addEventListener('input', function() {
+    login_valide(this);
+})
 input_pass.addEventListener("input", function() {
     mdp_valide(this);
 })
 input_pass_2.addEventListener("input", function() {
     mdp_valide(this);
 })
+
+
+function login_valide(input_login) {
+    ident_erreur.classList.remove('ident_erreur');
+    ident_erreur.innerHTML = '';
+    var res = false
+    const regex_login = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    const login = input_login.value;
+    if (regex_login.test(login) != 1) {
+        const message = "vuillez ecrire une adresse mail valide";
+
+        error_login.classList.remove('valide_form');
+        error_login.classList.add('error_form');
+        error_login.innerHTML = message;
+    } else {
+        error_login.classList.remove('error_form');
+        error_login.classList.add('valide_form');
+        error_login.innerHTML = "";
+    }
+
+
+}
 
 function mdp_valide(input_pass) {
     const pass = input_pass.value;

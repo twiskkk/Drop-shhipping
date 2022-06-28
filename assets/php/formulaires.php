@@ -1,4 +1,6 @@
 <?php
+
+
 /* Menu */
 function menu_visiteur(){
     ?>
@@ -30,7 +32,7 @@ function menu_connecter(){
     ?>
     <ul class="menu" id='ul'>
         <li><a href="index.php"><span id="logo_1" >H</span><span id="logo_2">ost</span><span id="logo_3">ips</span></a></li>
-        <li class="li_active"><a class="menu_texte menu_texte_accueil" href="index.php">Accueil</a></li>
+        <li class="li_active"><a class="menu_texte menu_texte_accueil_connect" href="index.php">Accueil</a></li>
         <li><a class="menu_texte" href="index.php" id='tendency'>Tendency</a></li>
         <li><a class="menu_texte" href="index.php" id='new'>New</a></li>
         <li><a class="menu_texte menu_btn" href="connect.php?action=login" id='connect'>
@@ -42,7 +44,9 @@ function menu_connecter(){
         </a></li>
         <li><a class="menu_texte" href="panier.php" id='panier' >
             <span class="icon_panier">
-            <?php echo $panier ?>
+            <?php
+             if(!empty($panier))echo 'test';
+              ?>
             </span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-cart" viewBox="0 0 16 16">
@@ -52,6 +56,8 @@ function menu_connecter(){
                  Panier
             </a>
         </li>
+        <li><a class="menu_texte menu_btn" href="index.php?action=logout" id='logout'>Logout </a></li>
+
     </ul>
 <?php
 

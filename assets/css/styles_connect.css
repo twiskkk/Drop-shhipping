@@ -213,7 +213,7 @@ nav span {
 
 .card {
     margin: auto;
-    height: 330px;
+    height: 360px;
     width: 500px;
     margin-top: 3%;
     box-shadow: 8px 8px 16px 8px rgba(0, 0, 0, 0.2);
@@ -281,6 +281,12 @@ label {
 }
 
 .error_form {
+    color: red;
+    text-align: center;
+    font-size: 16px;
+}
+
+.ident_erreur {
     color: red;
     text-align: center;
     font-size: 16px;

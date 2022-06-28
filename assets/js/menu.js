@@ -10,6 +10,7 @@ const panier = document.getElementById('panier');
 const logo_1 = document.getElementById('logo_1');
 const logo_2 = document.getElementById('logo_2');
 const logo_3 = document.getElementById('logo_3');
+
 window.onload = function exampleFunction() {
     if (window.scrollY > 500) {
         /* Logo */

@@ -37,28 +37,40 @@ else{
                 ?>
                 <h1 class='header_title'>Page login</h1>
                 <p class='texte_changer'>Pour vous inscrire</p>
+                
                 <form class='changer' action="connect.php" method='get'>
-                    <button class='btn' type='submit' value='register' name='action' >Register</button>
+                    <button class='btn' type='submit' value='register' name='action' id='form_register' >Register</button>
                 </form>
 
                 <form  class='card' action="connect.php" method='post'>
-                <fieldset class='fieldset'>   
-                    <label class='label_login'>Login</label></br><input class='login' type='text' name='login' placeholder='user' id='login' ></input>
-                    </br>
-                    <label class='label_pass'>Password</label></br><input class='password' type='password' name='pass' placeholder='password' id='pass'></input>
-                    <p id='error_pass'></p>
-                    <input class='envoie' type='submit' name='submit' value='Login' onclick="return mdp_valide_form()"/>
-                </fieldset>
+                    <fieldset class='fieldset'>   
+                        <label class='label_login'>Login</label></br><input class='login' type='mail' name='login' placeholder='user' id='login' ></input>
+                        </br>
+                        <label class='label_pass'>Password</label></br><input class='password' type='password' name='pass' placeholder='password' id='pass'></input>
+                        <p id='error_pass'></p>
+                        <input class='envoie' type='submit' name='connect' value='Login' id='form_login'  onclick="return mdp_valide_form()"/>
+                    </fieldset>
                 </form>
                 <?php
             }
             else if($_GET['action']=='register'){
                 ?>
-                <p>page register<p>
-                <form action="connect.php" method='post'>
+                <h1 class='header_title'>Page register<h1>
+                <p class='texte_changer'>Pour vous connecter</p>
                 
-                    <button type='submit' value='login' name='action'>login</button>
-            </form>
+                <form class='changer' action="connect.php" method='get'>
+                    <button class='btn' type='submit' value='login' name='action' id='form_login'>Login</button>
+                </form>
+                <form action="connect.php" method='post' class='card_2'>
+                    <fieldset class='fieldset'>
+                        <label class='label_login'>Login</label></br><input class='login' type='mail' name='login' placeholder='user' id='login' ></input>
+                        </br>
+                        <label class='label_pass'>Password</label></br><input class='password' type='password' name='pass_1' placeholder='password' id='pass'></input>              
+                        </br><input class='password' type='password' name='pass_2' placeholder='password' id='pass_2'></input>
+                        <p id='error_pass'></p>
+                        <input class='envoie' type='submit' value='Register' name='connect' id='form_login' onclick="return mdp__identique()"/>
+                    </fieldset>
+                </form>
                 <?php
             }
         }
